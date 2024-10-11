@@ -6,18 +6,19 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 0 10px; /* Add padding to avoid content being cut off on smaller screens */
+    padding: 0 10px; 
 }
-
 .container {
     background-color:black;
     display: grid;
     padding: 20px;
     border-radius: 8px;
+    border: black solid 1px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 800px; /* Limit the width on larger screens */
-    box-sizing: border-box; /* Include padding in the width */
+    max-width: 800px; 
+    min-width: 380px;
+    box-sizing: border-box; 
 }
 
 h1 {
@@ -45,10 +46,11 @@ button {
     padding: 12px;
     background-color: #28a745;
     color: #fff;
+    border: 1px solid black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    flex-shrink: 0; /* Prevent the button from shrinking */
+    flex-shrink: 0; 
 }
 
 button:hover {
@@ -71,58 +73,42 @@ li {
     border-radius: 4px;
 }
 
-li.completed {
-    color:black;
+li .button-container {
+    display: flex;
+    gap: 10px; 
 }
 
 li button {
-    background-color: #dc3545;
+    background-color: #28a745;
     border: none;
     border-radius: 4px;
-    padding: 5px;
+    padding: 9px;
     color: #fff;
     cursor: pointer;
-    margin-left: 10px;
 }
 
 li button:hover {
-    background-color: #c82333;
+    background-color: #218838;
 }
 
-.edit-input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    flex: 1;
+li .delete-button {
+    background-color: red;
+
 }
 
-/* Responsive adjustments */
+li .delete-button:hover {
+    background-color: darkred;
+}
+
+
+
 @media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 1.2em;
-    }
-
-    input[type="text"], .edit-input {
-        padding: 6px;
-    }
-
-    button {
-        padding: 6px;
-        font-size: 0.9em;
-    }
-
     li {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; 
     }
 
-    li button {
-        margin-top: 5px;
-        margin-left: 0; /* Align buttons below text */
+    li .button-container {
+        justify-content: flex-end;
+        gap: 5px; 
     }
 }
